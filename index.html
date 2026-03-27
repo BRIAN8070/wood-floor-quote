@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 木地板報價單</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <style>
+        :root {
+            --ink: #213141;
+            --muted: #6e7b85;
+            --paper: rgba(255, 252, 247, 0.94);
+            --line: rgba(88, 73, 56, 0.14);
+            --owner: #23303b;
+            --designer: #c45236;
+            --berry: #2f5d8a;
+            --egger: #b33a32;
+            --noda: #2f7a4f;
+            --gold: #c6a164;
+            --gold-soft: #eed8ab;
+            --shadow: 0 24px 48px rgba(56, 46, 34, 0.12);
+        }
+        * { box-sizing: border-box; }
+        body {
+            font-family: "Segoe UI", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+            color: var(--ink);
+            margin: 0;
+            padding: 24px 16px 64px;
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at top left, rgba(255,255,255,0.94) 0%, rgba(255,255,255,0) 32%),
+                radial-gradient(circle at top right, rgba(180,144,93,0.12) 0%, rgba(180,144,93,0) 24%),
+                linear-gradient(180deg, #f4eee5 0%, #ece4d8 52%, #f5efe7 100%);
+        }
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.14) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.12) 1px, transparent 1px);
+            background-size: 42px 42px;
+            opacity: 0.18;
+        }
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            background:
+                linear-gradient(90deg, rgba(33,49,65,0.03), rgba(33,49,65,0) 18%, rgba(33,49,65,0) 82%, rgba(33,49,65,0.03));
+        }
+        .container {
+            max-width: 1040px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        .header {
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 26px;
+            padding: 32px 30px 26px;
+            border-radius: 34px;
+            color: #fff;
+            background:
+                linear-gradient(148deg, rgba(18, 28, 39, 0.98), rgba(34, 48, 63, 0.95) 52%, rgba(24, 34, 46, 0.98)),
+                linear-gradient(90deg, rgba(255,255,255,0.06), rgba(255,255,255,0));
+            border: 1px solid rgba(255,255,255,0.08);
+            box-shadow: 0 30px 60px rgba(24, 31, 40, 0.24);
+        }
+        .header::before {
+            content: "";
+            position: absolute;
+            right: -48px;
+            top: -44px;
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(214,184,122,0.28), rgba(214,184,122,0) 68%);
+        }
+        .header::after {
+            content: "";
+            position: absolute;
+            inset: auto auto 0 30px;
+            width: 140px;
+            height: 4px;
+            border-radius: 999px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-soft));
+        }
+        .header-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            align-items: stretch;
+        }
+        .hero-eyebrow {
+            margin: 0 0 8px;
+            font-size: 0.74rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.68);
+        }
+        .hero-title {
+            margin: 0;
+            font-family: "Georgia", "Times New Roman", serif;
+            font-size: clamp(2rem, 3.8vw, 3.1rem);
+            line-height: 1.02;
+            letter-spacing: 0.03em;
+        }
+        .hero-subtitle {
+            margin: 14px 0 0;
+            max-width: 640px;
+            font-size: 0.96rem;
+            line-height: 1.7;
+            color: rgba(255,255,255,0.78);
+        }
+        .hero-meta,
+        .hero-legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 12px;
+        }
+        .hero-meta {
+            margin-top: 18px;
+        }
+        .meta-chip,
+        .legend-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            min-height: 38px;
+            padding: 8px 12px;
+            border-radius: 999px;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.9);
+            font-size: 0.82rem;
+        }
+        .hero-legend {
+            margin-top: 12px;
+        }
+        .hero-ribbon {
+            margin-top: 18px;
+            padding: 14px 16px;
+            border-radius: 18px;
+            background: linear-gradient(90deg, rgba(198,161,100,0.2), rgba(198,161,100,0.08));
+            border: 1px solid rgba(198,161,100,0.26);
+            color: rgba(255,255,255,0.88);
+            font-size: 0.88rem;
+            line-height: 1.65;
+        }
+        .legend-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex: 0 0 auto;
+        }
+        .owner-dot { background: #f3f4f6; }
+        .designer-dot { background: #ff8d6f; }
+        .hero-board {
+            position: relative;
+            width: 100%;
+            padding: 14px;
+            border-radius: 22px;
+            background:
+                linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02)),
+                linear-gradient(145deg, rgba(255,255,255,0.04), rgba(255,255,255,0));
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+            backdrop-filter: blur(10px);
+        }
+        .board-kicker {
+            margin: 0 0 8px;
+            font-size: 0.72rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.64);
+        }
+        .board-title {
+            margin: 0 0 10px;
+            font-family: "Georgia", "Times New Roman", serif;
+            font-size: 0.94rem;
+            letter-spacing: 0.04em;
+            color: rgba(255,255,255,0.94);
+        }
+        .swatch-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 8px;
+        }
+        .brand-swatch {
+            position: relative;
+            min-height: 118px;
+            padding: 9px;
+            border-radius: 16px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            border: 1px solid rgba(255,255,255,0.12);
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.12);
+        }
+        .brand-swatch::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            opacity: 0.24;
+            background:
+                linear-gradient(135deg, rgba(255,255,255,0.34), rgba(255,255,255,0) 42%),
+                repeating-linear-gradient(90deg, rgba(255,255,255,0.12), rgba(255,255,255,0.12) 2px, transparent 2px, transparent 18px);
+        }
+        .swatch-media,
+        .brand-copy {
+            position: relative;
+            z-index: 1;
+        }
+        .swatch-link {
+            position: relative;
+            z-index: 1;
+            display: block;
+            color: inherit;
+            text-decoration: none;
+            border-radius: 12px;
+        }
+        .swatch-media {
+            flex: 0 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            aspect-ratio: 16 / 5.8;
+            width: 100%;
+            padding: 9px 12px;
+            border-radius: 12px;
+            background: rgba(255,255,255,0.9);
+            border: 1px solid rgba(255,255,255,0.45);
+            box-shadow:
+                0 10px 18px rgba(13, 20, 28, 0.15),
+                inset 0 1px 0 rgba(255,255,255,0.9);
+            transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+        }
+        .brand-image {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+            transform-origin: center;
+            filter: drop-shadow(0 10px 14px rgba(15, 23, 32, 0.1));
+        }
+        .swatch-link:hover .swatch-media,
+        .swatch-link:focus-visible .swatch-media {
+            transform: translateY(-2px);
+            border-color: rgba(255,255,255,0.72);
+            box-shadow:
+                0 20px 34px rgba(13, 20, 28, 0.22),
+                inset 0 1px 0 rgba(255,255,255,0.96);
+        }
+        .swatch-link:focus-visible {
+            outline: 2px solid rgba(255,255,255,0.92);
+            outline-offset: 4px;
+        }
+        .swatch-code {
+            position: absolute;
+            right: 10px;
+            top: 8px;
+            font-size: 0.58rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.68);
+        }
+        .brand-name {
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            color: #fff;
+        }
+        .brand-caption {
+            margin-top: 2px;
+            font-size: 0.62rem;
+            line-height: 1.35;
+            color: rgba(255,255,255,0.78);
+        }
+        .swatch-berry .swatch-media {
+            background: linear-gradient(135deg, rgba(255,255,255,0.98), rgba(226,238,251,0.92));
+        }
+        .swatch-berry .brand-image {
+            transform: scale(1);
+        }
+        .swatch-berry {
+            background: linear-gradient(135deg, #456b94, #25486d 70%, #1d3651);
+        }
+        .swatch-egger .swatch-media {
+            background: linear-gradient(135deg, rgba(255,255,255,0.98), rgba(255,233,230,0.92));
+        }
+        .swatch-egger .brand-image {
+            transform: scale(1.02);
+        }
+        .swatch-egger {
+            background: linear-gradient(135deg, #c15b4d, #9d332b 68%, #7e221c);
+        }
+        .swatch-noda .swatch-media {
+            background: linear-gradient(135deg, rgba(244,250,245,0.98), rgba(221,238,225,0.94));
+        }
+        .swatch-noda .brand-image {
+            transform: scale(1.08);
+        }
+        .swatch-noda {
+            background: linear-gradient(135deg, #4a9064, #2f6d46 70%, #255235);
+        }
+        .swatch-mfb .swatch-media {
+            background:
+                radial-gradient(circle at top, rgba(255,255,255,0.08), rgba(255,255,255,0) 52%),
+                linear-gradient(135deg, #866446, #674b36 68%, #553d2d);
+            border-color: rgba(255,255,255,0.14);
+        }
+        .swatch-mfb .brand-image {
+            width: auto;
+            height: 90%;
+            max-width: 84%;
+            transform: scale(0.96);
+        }
+        .swatch-mfb .brand-name {
+            font-size: 0.78rem;
+            line-height: 1.35;
+        }
+        .swatch-mfb {
+            background: linear-gradient(135deg, #8f7659, #6c533f 68%, #594130);
+        }
+        @media (max-width: 980px) {
+            .swatch-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+            .brand-swatch {
+                min-height: 132px;
+            }
+            .brand-name {
+                font-size: 0.88rem;
+            }
+            .brand-caption {
+                font-size: 0.68rem;
+            }
+            .swatch-mfb .brand-name {
+                font-size: 0.84rem;
+            }
+        }
+        .card {
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 22px;
+            padding: 26px 24px 22px;
+            border-radius: 28px;
+            background: var(--paper);
+            border: 1px solid var(--line);
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(8px);
+        }
+        .card::before {
+            content: "";
+            position: absolute;
+            inset: 0 0 auto;
+            height: 6px;
+            background: linear-gradient(90deg, var(--section-color), rgba(255,255,255,0));
+        }
+        .card::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 26px;
+            width: 88px;
+            height: 88px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255,255,255,0.26), rgba(255,255,255,0));
+            pointer-events: none;
+        }
+        h2 {
+            margin: 0;
+            line-height: 1.2;
+        }
+        .section-berry { --section-color: var(--berry); --section-tint: rgba(47, 93, 138, 0.06); --section-line: rgba(47, 93, 138, 0.16); }
+        .section-egger { --section-color: var(--egger); --section-tint: rgba(179, 58, 50, 0.06); --section-line: rgba(179, 58, 50, 0.16); }
+        .section-noda { --section-color: var(--noda); --section-tint: rgba(47, 122, 79, 0.06); --section-line: rgba(47, 122, 79, 0.16); }
+        .section-head {
+            display: grid;
+            grid-template-columns: 78px minmax(0, 1fr) auto;
+            gap: 14px;
+            align-items: center;
+            margin-bottom: 18px;
+            padding-bottom: 14px;
+            border-bottom: 1px solid rgba(88, 73, 56, 0.12);
+        }
+        .section-index {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 78px;
+            height: 78px;
+            border-radius: 24px;
+            background: linear-gradient(145deg, var(--section-color), rgba(32,47,62,0.94));
+            color: #fff;
+            font-family: "Georgia", "Times New Roman", serif;
+            font-size: 1.7rem;
+            letter-spacing: 0.08em;
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.16);
+        }
+        .section-kicker {
+            margin: 0 0 6px;
+            font-size: 0.72rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--section-color);
+        }
+        .section-title {
+            display: block;
+            font-family: "Georgia", "Times New Roman", serif;
+            font-size: 1.38rem;
+            letter-spacing: 0.03em;
+            color: var(--ink);
+        }
+        .section-region {
+            padding: 10px 14px;
+            border-radius: 999px;
+            font-size: 0.76rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--section-color);
+            background: var(--section-tint);
+            border: 1px solid var(--section-line);
+        }
+        .section-summary {
+            margin: 0 0 16px;
+            max-width: 860px;
+            color: #50606f;
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+        .section-bullets {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 0 0 16px;
+        }
+        .bullet-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            min-height: 36px;
+            padding: 8px 12px;
+            border-radius: 999px;
+            background: rgba(255,255,255,0.82);
+            border: 1px solid var(--section-line);
+            color: #556473;
+            font-size: 0.82rem;
+        }
+        .bullet-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--section-color);
+            flex: 0 0 auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            font-size: 0.92rem;
+        }
+        th, td {
+            padding: 12px 10px;
+            text-align: center;
+            border-bottom: 1px solid rgba(117, 104, 88, 0.12);
+        }
+        th {
+            background: #f3eee6;
+            color: #6f6458;
+            font-size: 0.76rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+        table tr:first-child th:first-child { border-top-left-radius: 14px; }
+        table tr:first-child th:last-child { border-top-right-radius: 14px; }
+        table tr:last-child td { border-bottom: none; }
+        .owner { font-weight: 700; color: var(--owner); }
+        .designer { color: var(--designer); font-weight: 700; }
+        .spec {
+            display: block;
+            margin-top: 4px;
+            font-size: 0.75rem;
+            color: #7c8791;
+        }
+        .tag-box {
+            margin-top: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        .tag {
+            padding: 4px 8px;
+            border-radius: 999px;
+            font-size: 0.72rem;
+            color: #6f6458;
+            background: #f3ede3;
+            border: 1px solid rgba(117, 104, 88, 0.12);
+        }
+        .series-block {
+            margin-top: 15px;
+            padding: 18px;
+            border-radius: 20px;
+            border: 1px solid var(--section-line);
+            background: linear-gradient(180deg, rgba(255,255,255,0.96), var(--section-tint));
+        }
+        .series-title {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .series-name {
+            font-weight: 700;
+            color: var(--ink);
+            font-size: 0.98rem;
+            letter-spacing: 0.01em;
+        }
+        .series-price {
+            padding: 6px 10px;
+            border-radius: 999px;
+            background: rgba(255,255,255,0.82);
+            border: 1px solid var(--section-line);
+            font-size: 0.78rem;
+            color: #6f6458;
+            text-align: right;
+            white-space: nowrap;
+        }
+        .series-price .designer { font-size: 0.82rem; }
+        .detail-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            font-size: 0.82rem;
+        }
+        .detail-table th,
+        .detail-table td {
+            text-align: left;
+            vertical-align: top;
+            padding: 10px 10px;
+        }
+        .detail-table th {
+            background: rgba(255,255,255,0.7);
+            font-size: 0.72rem;
+        }
+        .detail-table tr:first-child th:first-child { border-top-left-radius: 12px; }
+        .detail-table tr:first-child th:last-child { border-top-right-radius: 12px; }
+        .code {
+            white-space: nowrap;
+            font-weight: 700;
+            color: #43515f;
+        }
+        .insight-grid,
+        .policy-grid,
+        .cta-grid {
+            display: grid;
+            gap: 14px;
+        }
+        .insight-grid {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            margin: 0 0 16px;
+        }
+        .policy-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            margin-top: 16px;
+        }
+        .cta-grid {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            margin-top: 14px;
+        }
+        .insight-card,
+        .policy-card,
+        .cta-card {
+            padding: 16px;
+            border-radius: 20px;
+            background: rgba(255,255,255,0.82);
+            border: 1px solid rgba(88,73,56,0.12);
+            box-shadow: 0 12px 26px rgba(55, 46, 35, 0.06);
+        }
+        .insight-card {
+            background: linear-gradient(180deg, rgba(255,255,255,0.94), var(--section-tint));
+            border-color: var(--section-line);
+        }
+        .card-tag,
+        .policy-tag,
+        .cta-tag {
+            display: inline-flex;
+            align-items: center;
+            min-height: 30px;
+            padding: 6px 10px;
+            border-radius: 999px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+        .card-tag {
+            color: var(--section-color);
+            background: rgba(255,255,255,0.84);
+            border: 1px solid var(--section-line);
+        }
+        .policy-tag,
+        .cta-tag {
+            color: #8e6d2d;
+            background: rgba(255,245,222,0.92);
+            border: 1px solid rgba(198,161,100,0.28);
+        }
+        .insight-title,
+        .policy-title,
+        .cta-title {
+            margin: 14px 0 8px;
+            font-family: "Georgia", "Times New Roman", serif;
+            font-size: 1.08rem;
+            letter-spacing: 0.02em;
+            color: var(--ink);
+        }
+        .insight-body,
+        .policy-body,
+        .cta-body {
+            margin: 0;
+            color: #586675;
+            font-size: 0.88rem;
+            line-height: 1.75;
+        }
+        .service-panel {
+            margin-top: 22px;
+            padding: 24px 22px 22px;
+            border-radius: 28px;
+            background: linear-gradient(145deg, rgba(22,33,46,0.98), rgba(33,49,67,0.95));
+            color: #fff;
+            box-shadow: 0 26px 52px rgba(30,38,47,0.2);
+            overflow: hidden;
+            position: relative;
+        }
+        .service-panel::before {
+            content: "";
+            position: absolute;
+            inset: auto -40px -40px auto;
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(198,161,100,0.18), rgba(198,161,100,0));
+        }
+        .service-head {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            align-items: end;
+            margin-bottom: 12px;
+        }
+        .service-title {
+            margin: 0;
+            font-family: "Georgia", "Times New Roman", serif;
+            font-size: 1.5rem;
+            letter-spacing: 0.02em;
+        }
+        .service-subtitle {
+            margin: 10px 0 0;
+            max-width: 720px;
+            color: rgba(255,255,255,0.78);
+            line-height: 1.8;
+            font-size: 0.92rem;
+        }
+        .cta-card {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: none;
+        }
+        .cta-title,
+        .cta-body {
+            color: #fff;
+        }
+        .cta-body {
+            color: rgba(255,255,255,0.76);
+        }
+        .service-contact {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 16px;
+        }
+        .contact-pill {
+            display: inline-flex;
+            align-items: center;
+            min-height: 42px;
+            padding: 10px 14px;
+            border-radius: 999px;
+            background: rgba(198,161,100,0.16);
+            border: 1px solid rgba(198,161,100,0.28);
+            color: #fff;
+            font-size: 0.9rem;
+        }
+        .footer {
+            position: relative;
+            overflow: hidden;
+            margin-top: 20px;
+            padding: 20px 20px 18px;
+            border-radius: 24px;
+            background: linear-gradient(135deg, #fcf5e4, #f3deb2);
+            border: 1px solid rgba(181, 144, 70, 0.26);
+            box-shadow: 0 18px 34px rgba(113, 92, 46, 0.08);
+            font-size: 0.88rem;
+            line-height: 1.75;
+            color: #5b4b2f;
+        }
+        .footer::before {
+            content: "";
+            position: absolute;
+            inset: 0 auto auto 18px;
+            width: 96px;
+            height: 4px;
+            border-radius: 999px;
+            background: linear-gradient(90deg, #c7922f, #f0c96c);
+        }
+        .footer-title {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 0.96rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+        }
+        .highlight { color: var(--designer); font-weight: 700; }
+        @media (max-width: 768px) {
+            body {
+                padding: 14px 12px 42px;
+            }
+            .header {
+                padding: 22px 18px 20px;
+                border-radius: 24px;
+            }
+            .header-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-subtitle {
+                font-size: 0.9rem;
+            }
+            .hero-board {
+                width: 100%;
+                padding: 16px;
+            }
+            .swatch-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-ribbon {
+                font-size: 0.84rem;
+            }
+            .card {
+                padding: 18px 14px 16px;
+                border-radius: 22px;
+            }
+            .section-head {
+                grid-template-columns: 62px 1fr;
+                align-items: start;
+            }
+            .section-index {
+                width: 62px;
+                height: 62px;
+                border-radius: 18px;
+                font-size: 1.4rem;
+            }
+            .section-title {
+                font-size: 1.18rem;
+            }
+            .section-region {
+                grid-column: 1 / -1;
+                justify-self: start;
+                margin-left: 76px;
+            }
+            .series-title {
+                display: block;
+            }
+            .series-price {
+                margin-top: 8px;
+                text-align: left;
+                white-space: normal;
+            }
+            .insight-grid,
+            .policy-grid,
+            .cta-grid {
+                grid-template-columns: 1fr;
+            }
+            .service-head {
+                display: block;
+            }
+            .service-title {
+                font-size: 1.28rem;
+            }
+            th, td {
+                padding: 10px 6px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-grid">
+                <div>
+                    <p class="hero-eyebrow">Imported Interior Materials / 2026 Reference</p>
+                    <h1 class="hero-title">木地板報價單</h1>
+                    <div class="hero-meta">
+                        <span class="meta-chip">連工帶料</span>
+                        <span class="meta-chip">未稅價格</span>
+                        <span class="meta-chip">2026 / 03 / 27 更新</span>
+                    </div>
+                    <div class="hero-legend">
+                        <span class="legend-chip"><span class="legend-dot owner-dot"></span>黑色為參考報價</span>
+                    </div>
+                    <div class="hero-ribbon">整理 Balterio、EGGER、諾達與防水超耐磨無機板的系列資訊、配件內容與參考報價，方便提案說明、選材比對與正式報價前溝通。</div>
+                </div>
+                <div class="hero-board">
+                    <p class="board-kicker">Material Portfolio</p>
+                    <p class="board-title">Selected Collections</p>
+                    <div class="swatch-grid">
+                        <div class="brand-swatch swatch-berry">
+                            <span class="swatch-code">01</span>
+                            <a class="swatch-link" href="https://www.balterio.com.tw/" target="_blank" rel="noopener noreferrer" aria-label="前往 Balterio 巴特利歐官網">
+                                <div class="swatch-media">
+                                    <img class="brand-image" src="assets/brands/balterio-clean.png" alt="Balterio 品牌識別">
+                                </div>
+                            </a>
+                            <div class="brand-copy">
+                                <span class="brand-name">Balterio</span>
+                                <span class="brand-caption">Belgium imported flooring collection</span>
+                            </div>
+                        </div>
+                        <div class="brand-swatch swatch-egger">
+                            <span class="swatch-code">02</span>
+                            <a class="swatch-link" href="https://www.fumaogroup.com.tw/products/flooring/egger/" target="_blank" rel="noopener noreferrer" aria-label="前往 EGGER 品牌頁">
+                                <div class="swatch-media">
+                                    <img class="brand-image" src="assets/brands/egger-crop.png" alt="EGGER 品牌識別">
+                                </div>
+                            </a>
+                            <div class="brand-copy">
+                                <span class="brand-name">EGGER</span>
+                                <span class="brand-caption">Germany aqua resistant laminate series</span>
+                            </div>
+                        </div>
+                        <div class="brand-swatch swatch-noda">
+                            <span class="swatch-code">03</span>
+                            <a class="swatch-link" href="https://www.rhodafloor.com.tw/" target="_blank" rel="noopener noreferrer" aria-label="前往 諾達地板官網">
+                                <div class="swatch-media">
+                                    <img class="brand-image" src="assets/brands/noda-clean.png" alt="諾達地板 品牌識別">
+                                </div>
+                            </a>
+                            <div class="brand-copy">
+                                <span class="brand-name">Noda</span>
+                                <span class="brand-caption">Pattern flooring collection</span>
+                            </div>
+                        </div>
+                        <div class="brand-swatch swatch-mfb">
+                            <span class="swatch-code">04</span>
+                            <a class="swatch-link" href="https://mbfloor.com.tw/overview_type.php?type=129" target="_blank" rel="noopener noreferrer" aria-label="前往 防水超耐磨無機板系列頁">
+                                <div class="swatch-media">
+                                    <img class="brand-image" src="assets/brands/footer_logo.png" alt="防水超耐磨無機板 品牌識別">
+                                </div>
+                            </a>
+                            <div class="brand-copy">
+                                <span class="brand-name">防水超耐磨無機板</span>
+                                <span class="brand-caption">MFB wear-resistant board collection</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card section-berry">
+            <div class="section-head">
+                <div class="section-index">01</div>
+                <div class="section-copy">
+                    <p class="section-kicker">Belgium Imported Collection</p>
+                    <h2 class="section-title">比利時 Balterio 巴特利歐系列</h2>
+                </div>
+                <div class="section-region">Balterio</div>
+            </div>
+            <p class="section-summary">源自比利時 Balterio 的精品品質，3D 同步壓紋搭配 72 小時潑水測試認證，自然紋理更能呈現高端木質層次，適合重視空間質感與細節完成度的住宅與設計案。</p>
+            <div class="section-bullets">
+                <span class="bullet-chip"><span class="bullet-dot"></span>72 小時潑水測試</span>
+                <span class="bullet-chip"><span class="bullet-dot"></span>3D 同步壓紋</span>
+                <span class="bullet-chip"><span class="bullet-dot"></span>自然木感紋理</span>
+            </div>
+            <table>
+                <tr><th>系列 / 規格</th><th>參考報價</th></tr>
+                <tr><td>活力精選<span class="spec">1261*192*8</span></td><td class="owner">$4,800</td></tr>
+                <tr><td>活力豪華<span class="spec">1261*192*8</span></td><td class="owner">$5,200</td></tr>
+                <tr><td>精品系列<span class="spec">1261*192*8</span></td><td class="owner">$5,400</td></tr>
+                <tr><td>新寬板<span class="spec">1261*244*8</span></td><td class="owner">$5,600</td></tr>
+            </table>
+
+            <div class="series-block">
+                <div class="series-title">
+                    <div class="series-name">比利時地板配件與靜音墊</div>
+                </div>
+                <table class="detail-table">
+                    <tr><th>項目</th><th>參考報價</th></tr>
+                    <tr>
+                        <td>3.6MM 英國靜音墊<span class="spec">3.03坪 / 捲</span></td>
+                        <td class="owner">$1,200</td>
+                    </tr>
+                    <tr>
+                        <td>原廠智慧條<span class="spec">2.15M / 支</span></td>
+                        <td class="owner">$900</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="card section-egger">
+            <div class="section-head">
+                <div class="section-index">02</div>
+                <div class="section-copy">
+                    <p class="section-kicker">German Interior Surface System</p>
+                    <h2 class="section-title">德國 EGGER 耐磨系列</h2>
+                </div>
+                <div class="section-region">EGGER</div>
+            </div>
+            <p class="section-summary">德國 EGGER 以嚴謹工藝打造多款木紋色系，Aqua 系列提供防水升級，LARGE / LONG 格式展現大板氣勢，Aqua+ 系列更進一步對應高濕環境需求，是商空與住宅提案都很穩定的系列。</p>
+            <div class="insight-grid">
+                <div class="insight-card">
+                    <span class="card-tag">Aqua</span>
+                    <h3 class="insight-title">標準防水核心</h3>
+                    <p class="insight-body">超耐磨防水核心，適合一般居家與商業空間，提供多元色系與穩定施工性。</p>
+                </div>
+                <div class="insight-card">
+                    <span class="card-tag">Large / Long</span>
+                    <h3 class="insight-title">大板與長板比例</h3>
+                    <p class="insight-body">更寬更長的板材比例，視覺延伸效果更強，適合大坪數空間與開放式格局。</p>
+                </div>
+                <div class="insight-card">
+                    <span class="card-tag">Aqua+</span>
+                    <h3 class="insight-title">進階防水定位</h3>
+                    <p class="insight-body">加強防水配方，適合浴廁過渡區與較潮濕環境，兼顧功能與質感。</p>
+                </div>
+            </div>
+            <div class="series-block">
+                <div class="series-title">
+                    <div class="series-name">8/32 - 8/33 入門防水系列</div>
+                    <div class="series-price">
+                        <span class="owner">參考報價：$5,100</span>
+                    </div>
+                </div>
+                <table class="detail-table">
+                    <tr><th>型號</th><th>花色</th></tr>
+                    <tr><td class="code">EL2154</td><td>洛哈奶油橡木</td></tr>
+                    <tr><td class="code">EL2113</td><td>皮諾沙棕橡木</td></tr>
+                    <tr><td class="code">EL2525</td><td>榭菲爾德淺色刺槐</td></tr>
+                </table>
+            </div>
+
+            <div class="series-block">
+                <div class="series-title">
+                    <div class="series-name">8/32 Aqua 耐磨系列</div>
+                    <div class="series-price">
+                        <span class="owner">參考報價：$5,100</span>
+                    </div>
+                </div>
+                <table class="detail-table">
+                    <tr><th>型號</th><th>花色</th></tr>
+                    <tr><td class="code">EL2064</td><td>索里雅原橡</td></tr>
+                    <tr><td class="code">EL2065</td><td>索里亞灰橡</td></tr>
+                    <tr><td class="code">EL2070</td><td>萊里淺胡桃木</td></tr>
+                    <tr><td class="code">EL2102</td><td>鄧寧頓淺橡</td></tr>
+                    <tr><td class="code">EL2103</td><td>鄧寧頓深橡</td></tr>
+                    <tr><td class="code">EL2112</td><td>皮諾淺灰橡木</td></tr>
+                    <tr><td class="code">EL2183</td><td>特雷維索棕橡木</td></tr>
+                </table>
+            </div>
+
+            <div class="series-block">
+                <div class="series-title">
+                    <div class="series-name">8/32 Aqua 精選系列</div>
+                    <div class="series-price">
+                        <span class="owner">參考報價：$5,400</span>
+                    </div>
+                </div>
+                <table class="detail-table">
+                    <tr><th>型號</th><th>花色</th></tr>
+                    <tr><td class="code">EL2180</td><td>特雷維索白橡木</td></tr>
+                    <tr><td class="code">EL2240</td><td>維奧淺色梣木</td></tr>
+                </table>
+            </div>
+
+            <div class="series-block">
+                <div class="series-title">
+                    <div class="series-name">8/32 LARGE Aqua 大板系列</div>
+                    <div class="series-price">
+                        <span class="owner">參考報價：$5,400</span>
+                    </div>
+                </div>
+                <table class="detail-table">
+                    <tr><th>型號</th><th>花色</th></tr>
+                    <tr><td class="code">EL2026</td><td>維多利亞白色橡木</td></tr>
+                    <tr><td class="code">EL2026</td><td>維多利亞自然橡木</td></tr>
+                </table>
+            </div>
+
+            <div class="series-block">
+                <div class="series-title">
+                    <div class="series-name">10/33 LONG Aqua 長板系列</div>
+                    <div class="series-price">
+                        <span class="owner">參考報價：$6,700</span>
+                    </div>
+                </div>
+                <table class="detail-table">
+                    <tr><th>型號</th><th>花色</th></tr>
+                    <tr><td class="code">EL2431</td><td>貝福德淺橡</td></tr>
+                    <tr><td class="code">EL2988</td><td>盧埃納沙米</td></tr>
+                </table>
+            </div>
+
+            <div class="series-block">
+                <div class="series-title">
+                    <div class="series-name">8/32 - 8/33 Aqua+ 進階防水系列</div>
+                    <div class="series-price">
+                        <span class="owner">參考報價：$6,100</span>
+                    </div>
+                </div>
+                <table class="detail-table">
+                    <tr><th>型號</th><th>花色</th></tr>
+                    <tr><td class="code">EL2172</td><td>帕多瓦蜂蜜橡木</td></tr>
+                    <tr><td class="code">EL2181</td><td>雷維索自然橡木</td></tr>
+                    <tr><td class="code">EL2192</td><td>圖鈴深橡木</td></tr>
+                    <tr><td class="code">EL2135</td><td>巴羅尼亞灰橡</td></tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="card section-noda">
+            <div class="section-head">
+                <div class="section-index">03</div>
+                <div class="section-copy">
+                    <p class="section-kicker">Pattern Flooring & Inorganic Board</p>
+                    <h2 class="section-title">諾達地板與防水超耐磨無機板</h2>
+                </div>
+                <div class="section-region">Noda / MFB</div>
+            </div>
+            <p class="section-summary">諾達以多元鋪設工法著稱，典韻系列寬板大氣、人字拼系列視覺層次豐富；MFB 防水超耐磨無機板則結合防水核心技術與耐磨表層，對台灣潮濕氣候與翻修案都相當友善。</p>
+            <div class="section-bullets">
+                <span class="bullet-chip"><span class="bullet-dot"></span>個性化鋪設工法</span>
+                <span class="bullet-chip"><span class="bullet-dot"></span>寬板與人字拼選擇</span>
+                <span class="bullet-chip"><span class="bullet-dot"></span>高 CP 值防水方案</span>
+            </div>
+
+            <div class="series-block">
+                <div class="series-title">
+                    <div class="series-name">諾達地板系列</div>
+                </div>
+                <table class="detail-table">
+                    <tr><th>項目</th><th>參考報價</th></tr>
+                    <tr>
+                        <td>典韻系列 (A1501-A1512)<span class="spec">1515 * 238 * 8MM</span></td>
+                        <td class="owner">$3,900</td>
+                    </tr>
+                    <tr>
+                        <td>人字拼系列 (H201-H206)<span class="spec">593 * 123 * 8MM</span></td>
+                        <td class="owner">$6,800</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="series-block">
+                <div class="series-title">
+                    <div class="series-name">諾達配件</div>
+                </div>
+                <table class="detail-table">
+                    <tr><th>項目</th><th>參考報價</th></tr>
+                    <tr><td>配件 - 起步條 / 分隔條</td><td class="owner">$800</td></tr>
+                    <tr><td>配件 - 一字條</td><td class="owner">$800</td></tr>
+                    <tr><td>配件 - 樓梯收邊條</td><td class="owner">$800</td></tr>
+                </table>
+            </div>
+
+            <div class="series-block">
+                <div class="series-title">
+                    <div class="series-name">防水超耐磨無機板</div>
+                </div>
+                <table class="detail-table">
+                    <tr><th>項目</th><th>參考報價</th></tr>
+                    <tr>
+                        <td>MFB 防水超耐磨無機板<span class="spec">1220 * 196 * 9.5MM</span></td>
+                        <td class="owner">$4,300</td>
+                    </tr>
+                    <tr>
+                        <td>配件 - 起步條 / 分隔條</td>
+                        <td class="owner">$800</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="service-panel">
+            <div class="service-head">
+                <div>
+                    <p class="board-kicker">Project Support</p>
+                    <h2 class="service-title">服務與施工說明</h2>
+                    <p class="service-subtitle">可依案場需求提供純材料或連工帶料報價，並協助丈量、樣品確認與施工細節溝通，方便正式報價前評估整體預算。</p>
+                </div>
+            </div>
+            <div class="policy-grid">
+                <div class="policy-card">
+                    <span class="policy-tag">Quote</span>
+                    <h3 class="policy-title">報價依案場確認</h3>
+                    <p class="policy-body">本頁為系列參考報價，實際金額會依坪數、配件、收邊條件與施工範圍調整。</p>
+                </div>
+                <div class="policy-card">
+                    <span class="policy-tag">Measure</span>
+                    <h3 class="policy-title">支援丈量與估算</h3>
+                    <p class="policy-body">可先依平面圖進行快速估算，正式下單前再以現場丈量確認面積與收邊方式。</p>
+                </div>
+                <div class="policy-card">
+                    <span class="policy-tag">Sample</span>
+                    <h3 class="policy-title">樣品與色號確認</h3>
+                    <p class="policy-body">可依空間採光與家具色調，比對系列樣品、紋理與拼接效果後再定案。</p>
+                </div>
+                <div class="policy-card">
+                    <span class="policy-tag">Accessory</span>
+                    <h3 class="policy-title">配件與施工另計</h3>
+                    <p class="policy-body">靜音墊、收邊條、起步條與特殊施工需求可分項列出，方便對客說明整體預算。</p>
+                </div>
+            </div>
+            <div class="cta-grid">
+                <div class="cta-card">
+                    <span class="cta-tag">Measure</span>
+                    <h3 class="cta-title">免費丈量</h3>
+                    <p class="cta-body">提供前期坪數估算與現場丈量服務，協助快速確認預算區間。</p>
+                </div>
+                <div class="cta-card">
+                    <span class="cta-tag">Schedule</span>
+                    <h3 class="cta-title">施工排程規劃</h3>
+                    <p class="cta-body">可依案場時程安排材料進場、施工順序與完工交付時間。</p>
+                </div>
+                <div class="cta-card">
+                    <span class="cta-tag">Sample</span>
+                    <h3 class="cta-title">樣品比對</h3>
+                    <p class="cta-body">提案前可先確認色號與紋理方向，降低完工後與預期落差的風險。</p>
+                </div>
+            </div>
+            <div class="service-contact">
+                <span class="contact-pill">可攜平面圖快速估算</span>
+                <span class="contact-pill">歡迎預約現場丈量與正式報價</span>
+            </div>
+        </div>
+
+        <div class="footer">
+            <span class="footer-title">專業備註</span>
+            1. 以上單價均為<span class="highlight">連工帶料</span>，且<span class="highlight">不含 5% 營業稅</span>。<br>
+            2. 以上為系列參考報價，實際金額需依案場條件、配件與施工範圍另行確認。<br>
+            3. 更新日期：2026/03/27。
+        </div>
+    </div>
+</body>
+</html>
