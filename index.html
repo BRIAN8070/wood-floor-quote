@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2026 木地板報價單</title>
+    <title>2026 木地板選材與參考報價</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <style>
         :root {
@@ -434,11 +434,259 @@
             font-size: 0.95rem;
             line-height: 1.8;
         }
+        .brand-story-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+            gap: 14px;
+            margin: 0 0 16px;
+        }
+        .brand-story-card {
+            padding: 16px;
+            border-radius: 20px;
+            background: linear-gradient(180deg, rgba(255,255,255,0.96), var(--section-tint));
+            border: 1px solid var(--section-line);
+            box-shadow: 0 12px 26px rgba(55, 46, 35, 0.06);
+        }
+        .brand-story-kicker {
+            display: inline-flex;
+            align-items: center;
+            min-height: 30px;
+            padding: 6px 10px;
+            border-radius: 999px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--section-color);
+            background: rgba(255,255,255,0.84);
+            border: 1px solid var(--section-line);
+        }
+        .brand-story-title {
+            margin: 14px 0 8px;
+            font-family: "Georgia", "Times New Roman", serif;
+            font-size: 1.08rem;
+            letter-spacing: 0.02em;
+            color: var(--ink);
+        }
+        .brand-story-body {
+            margin: 0;
+            color: #586675;
+            font-size: 0.88rem;
+            line-height: 1.75;
+        }
+        .brand-story-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 42px;
+            margin-top: 14px;
+            padding: 10px 16px;
+            border-radius: 999px;
+            color: var(--section-color);
+            background: rgba(255,255,255,0.9);
+            border: 1px solid var(--section-line);
+            font-size: 0.84rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            text-decoration: none;
+            transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+        }
+        .brand-story-link:hover,
+        .brand-story-link:focus-visible {
+            transform: translateY(-1px);
+            border-color: rgba(47, 93, 138, 0.3);
+            box-shadow: 0 10px 24px rgba(47, 93, 138, 0.12);
+        }
+        .berry-series-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+            margin: 0 0 16px;
+        }
+        .berry-series-card {
+            overflow: hidden;
+            border-radius: 22px;
+            background: linear-gradient(180deg, rgba(255,255,255,0.98), var(--section-tint));
+            border: 1px solid var(--section-line);
+            box-shadow: 0 12px 26px rgba(55, 46, 35, 0.06);
+        }
+        .berry-series-media {
+            aspect-ratio: 16 / 9.2;
+            overflow: hidden;
+            background: #f4efe8;
+        }
+        .berry-series-image {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        .berry-series-body {
+            padding: 16px;
+        }
+        .berry-series-label {
+            display: inline-flex;
+            align-items: center;
+            min-height: 30px;
+            padding: 6px 10px;
+            border-radius: 999px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--section-color);
+            background: rgba(255,255,255,0.84);
+            border: 1px solid var(--section-line);
+        }
+        .berry-series-name {
+            margin: 12px 0 8px;
+            font-family: "Georgia", "Times New Roman", serif;
+            font-size: 1.1rem;
+            letter-spacing: 0.02em;
+            color: var(--ink);
+        }
+        .berry-series-spec {
+            margin: 0;
+            color: #586675;
+            font-size: 0.86rem;
+            line-height: 1.75;
+        }
+        .berry-series-price {
+            margin-top: 12px;
+            display: inline-flex;
+            align-items: center;
+            min-height: 40px;
+            padding: 9px 14px;
+            border-radius: 999px;
+            background: rgba(255,255,255,0.88);
+            border: 1px solid var(--section-line);
+            color: var(--owner);
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+        .cert-showcase {
+            --section-color: #8a6a43;
+            --section-tint: rgba(198,161,100,0.08);
+            --section-line: rgba(166,131,82,0.18);
+        }
+        .cert-showcase-link {
+            display: block;
+            border-radius: 24px;
+            overflow: hidden;
+            background: linear-gradient(180deg, rgba(255,255,255,0.96), var(--section-tint));
+            border: 1px solid var(--section-line);
+            box-shadow: 0 18px 34px rgba(55, 46, 35, 0.08);
+        }
+        .cert-showcase-link:hover,
+        .cert-showcase-link:focus-visible {
+            box-shadow: 0 24px 42px rgba(55, 46, 35, 0.12);
+            transform: translateY(-1px);
+        }
+        .cert-showcase-image {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        .cert-showcase-actions {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 12px;
+        }
+        .cert-showcase-cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 42px;
+            padding: 10px 16px;
+            border-radius: 999px;
+            background: rgba(255,255,255,0.92);
+            border: 1px solid var(--section-line);
+            color: var(--section-color);
+            font-size: 0.84rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            text-decoration: none;
+            box-shadow: 0 10px 22px rgba(55, 46, 35, 0.06);
+            transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+        }
+        .cert-showcase-cta:hover,
+        .cert-showcase-cta:focus-visible {
+            transform: translateY(-1px);
+            border-color: rgba(166,131,82,0.34);
+            box-shadow: 0 14px 26px rgba(55, 46, 35, 0.1);
+        }
         .section-bullets {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
             margin: 0 0 16px;
+        }
+        .buyer-panel {
+            --section-color: #8a6a43;
+            --section-tint: rgba(198,161,100,0.08);
+            --section-line: rgba(166,131,82,0.18);
+        }
+        .buyer-head {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            align-items: end;
+            margin-bottom: 14px;
+            padding-bottom: 14px;
+            border-bottom: 1px solid rgba(88, 73, 56, 0.12);
+        }
+        .buyer-grid,
+        .journey-strip {
+            display: grid;
+            gap: 14px;
+        }
+        .buyer-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            margin-top: 16px;
+        }
+        .journey-strip {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            margin-top: 14px;
+        }
+        .buyer-card,
+        .journey-item {
+            padding: 16px;
+            border-radius: 20px;
+            background: linear-gradient(180deg, rgba(255,255,255,0.94), var(--section-tint));
+            border: 1px solid var(--section-line);
+            box-shadow: 0 12px 26px rgba(55, 46, 35, 0.06);
+        }
+        .buyer-label {
+            display: inline-flex;
+            align-items: center;
+            min-height: 30px;
+            padding: 6px 10px;
+            border-radius: 999px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #8e6d2d;
+            background: rgba(255,245,222,0.92);
+            border: 1px solid rgba(198,161,100,0.28);
+        }
+        .buyer-card h3,
+        .journey-item strong {
+            display: block;
+            margin: 14px 0 8px;
+            font-family: "Georgia", "Times New Roman", serif;
+            font-size: 1.08rem;
+            letter-spacing: 0.02em;
+            color: var(--ink);
+        }
+        .buyer-card p,
+        .journey-item span {
+            display: block;
+            margin: 0;
+            color: #586675;
+            font-size: 0.88rem;
+            line-height: 1.75;
         }
         .bullet-chip {
             display: inline-flex;
@@ -520,6 +768,14 @@
             color: var(--ink);
             font-size: 0.98rem;
             letter-spacing: 0.01em;
+        }
+        .series-meta {
+            display: block;
+            margin-top: 4px;
+            font-size: 0.78rem;
+            font-weight: 500;
+            color: #6f6458;
+            letter-spacing: 0;
         }
         .series-price {
             padding: 6px 10px;
@@ -780,8 +1036,15 @@
             }
             .insight-grid,
             .policy-grid,
-            .cta-grid {
+            .cta-grid,
+            .brand-story-grid,
+            .berry-series-grid,
+            .buyer-grid,
+            .journey-strip {
                 grid-template-columns: 1fr;
+            }
+            .buyer-head {
+                display: block;
             }
             .service-head {
                 display: block;
@@ -801,16 +1064,14 @@
             <div class="header-grid">
                 <div>
                     <p class="hero-eyebrow">Imported Interior Materials / 2026 Reference</p>
-                    <h1 class="hero-title">木地板報價單</h1>
+                    <h1 class="hero-title">木地板選材與參考報價</h1>
+                    <p class="hero-subtitle">這份整理不是只讓你看單價，而是先幫你看懂各系列定位、防水耐磨差異、常見追加項目與施工前要確認的重點，讓正式報價前的溝通更有效率。</p>
                     <div class="hero-meta">
-                        <span class="meta-chip">連工帶料</span>
+                        <span class="meta-chip">系列參考報價</span>
                         <span class="meta-chip">未稅價格</span>
-                        <span class="meta-chip">2026 / 03 / 27 更新</span>
+                        <span class="meta-chip">2026 / 03 / 30 更新</span>
                     </div>
-                    <div class="hero-legend">
-                        <span class="legend-chip"><span class="legend-dot owner-dot"></span>黑色為參考報價</span>
-                    </div>
-                    <div class="hero-ribbon">整理 Balterio、EGGER、諾達與防水超耐磨無機板的系列資訊、配件內容與參考報價，方便提案說明、選材比對與正式報價前溝通。</div>
+                    <div class="hero-ribbon">如果你正在比較木地板，建議先看「適合空間」、「是否需要加強防水」與「哪些配件或收邊會另外計」這三件事，再看單價，會比只比數字更接近實際預算。</div>
                 </div>
                 <div class="hero-board">
                     <p class="board-kicker">Material Portfolio</p>
@@ -869,6 +1130,57 @@
             </div>
         </div>
 
+        <div class="card buyer-panel">
+            <div class="buyer-head">
+                <div>
+                    <p class="section-kicker">Homeowner Guide</p>
+                    <h2 class="section-title">屋主通常先在意的 4 個問題</h2>
+                </div>
+                <div class="section-region">Before You Compare</div>
+            </div>
+            <p class="section-summary">很多預算差異不是出在地板本身，而是出在收邊、拆除、地坪條件與使用空間。先把這幾題看懂，後面選系列與抓預算會快很多。</p>
+            <div class="buyer-grid">
+                <div class="buyer-card">
+                    <span class="buyer-label">Budget</span>
+                    <h3>先看總預算，不只看單價</h3>
+                    <p>同一系列地板之外，靜音墊、起步條、收邊條、地面整平與拆除都會影響最終報價，正式估價一定要一起看。</p>
+                </div>
+                <div class="buyer-card">
+                    <span class="buyer-label">Waterproof</span>
+                    <h3>防水與耐磨要對應使用空間</h3>
+                    <p>不是所有地板都適合潮濕區與高使用頻率空間。先分清楚客廳、臥室、玄關過渡區與翻修案需求，比較容易選對系列。</p>
+                </div>
+                <div class="buyer-card">
+                    <span class="buyer-label">Color</span>
+                    <h3>顏色一定要對現場採光</h3>
+                    <p>同一塊木地板在自然光、黃光與白光下都可能看起來不同，建議一定要拿樣品對照牆面、櫃體與門片後再定案。</p>
+                </div>
+                <div class="buyer-card">
+                    <span class="buyer-label">Process</span>
+                    <h3>施工前要先確認收邊與落差</h3>
+                    <p>門縫高度、原地坪是否保留、踢腳板、拆除清運與家具移位都會影響施工方式，越早確認越不容易後面追加。</p>
+                </div>
+            </div>
+            <div class="journey-strip">
+                <div class="journey-item">
+                    <strong>重視木紋質感</strong>
+                    <span>優先看 Balterio 的表面紋理與整體完成度。</span>
+                </div>
+                <div class="journey-item">
+                    <strong>想兼顧防水耐磨</strong>
+                    <span>先從 EGGER 的 Aqua 與 Aqua+ 系列開始比較。</span>
+                </div>
+                <div class="journey-item">
+                    <strong>想做造型鋪法</strong>
+                    <span>諾達的人字拼與寬板系列會比較適合。</span>
+                </div>
+                <div class="journey-item">
+                    <strong>翻修案重視機能</strong>
+                    <span>可把 MFB 無機板列入防水與預算方案一起比較。</span>
+                </div>
+            </div>
+        </div>
+
         <div class="card section-berry">
             <div class="section-head">
                 <div class="section-index">01</div>
@@ -878,19 +1190,64 @@
                 </div>
                 <div class="section-region">Balterio</div>
             </div>
-            <p class="section-summary">源自比利時 Balterio 的精品品質，3D 同步壓紋搭配 72 小時潑水測試認證，自然紋理更能呈現高端木質層次，適合重視空間質感與細節完成度的住宅與設計案。</p>
-            <div class="section-bullets">
-                <span class="bullet-chip"><span class="bullet-dot"></span>72 小時潑水測試</span>
-                <span class="bullet-chip"><span class="bullet-dot"></span>3D 同步壓紋</span>
-                <span class="bullet-chip"><span class="bullet-dot"></span>自然木感紋理</span>
+            <p class="section-summary">如果你重視木紋真實感、表面層次與整體完成度，Balterio 會更偏向質感型選擇。3D 同步壓紋搭配 72 小時潑水測試認證，適合客廳、主臥與重視空間氣氛的住宅。</p>
+            <div class="brand-story-grid">
+                <div class="brand-story-card">
+                    <span class="brand-story-kicker">UNILIN Group</span>
+                    <h3 class="brand-story-title">Balterio 背後是 UNILIN 的地板技術體系</h3>
+                    <p class="brand-story-body">核心技術：Uniclic 卡扣系統。UNILIN 的最大貢獻是於 1997 年發明了「UNICLIC 專利卡扣」安裝系統，這是一項革命性的木地板技術。</p>
+                    <p class="brand-story-body" style="margin-top:10px;">特性：接合包覆完整、緊密，不易脫漏，具有極高的穩定性。</p>
+                    <p class="brand-story-body" style="margin-top:10px;">安裝：支援兩種安裝方式（推扣與角度旋入），安裝簡單快速。</p>
+                    <p class="brand-story-body" style="margin-top:10px;">影響：它是業界最受歡迎的專利技術之一，許多知名廠牌都授權使用此技術。</p>
+                </div>
+                <div class="brand-story-card">
+                    <span class="brand-story-kicker">Click System</span>
+                    <h3 class="brand-story-title">卡扣施工方式怎麼做？</h3>
+                    <p class="brand-story-body">如果你想先了解木地板不是怎麼一片片黏死，而是如何透過卡扣結構完成鋪設，可以直接看官方施工方式頁面，對工法與施工流程會更有概念。</p>
+                    <a class="brand-story-link" href="https://www.balterio.com.tw/26045240372604124335.html" target="_blank" rel="noopener noreferrer">查看 Balterio 官方施工方式</a>
+                </div>
             </div>
-            <table>
-                <tr><th>系列 / 規格</th><th>參考報價</th></tr>
-                <tr><td>活力精選<span class="spec">1261*192*8</span></td><td class="owner">$4,800</td></tr>
-                <tr><td>活力豪華<span class="spec">1261*192*8</span></td><td class="owner">$5,200</td></tr>
-                <tr><td>精品系列<span class="spec">1261*192*8</span></td><td class="owner">$5,400</td></tr>
-                <tr><td>新寬板<span class="spec">1261*244*8</span></td><td class="owner">$5,600</td></tr>
-            </table>
+            <div class="section-bullets">
+                <span class="bullet-chip"><span class="bullet-dot"></span>木感層次更強</span>
+                <span class="bullet-chip"><span class="bullet-dot"></span>72 小時潑水測試</span>
+                <span class="bullet-chip"><span class="bullet-dot"></span>卡扣工法好理解</span>
+                <span class="bullet-chip"><span class="bullet-dot"></span>適合客廳與主臥</span>
+            </div>
+            <div class="series-block">
+                <div class="series-title">
+                    <div class="series-name">活力新精選系列<span class="series-meta">New Vitality / 1261 x 192 x 8 mm / 72 小時防潑水</span></div>
+                    <div class="series-price">
+                        <span class="owner">業主價：$4,800 / 坪</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="series-block">
+                <div class="series-title">
+                    <div class="series-name">活力新豪華系列<span class="series-meta">New Vitality / 1261 x 192 x 8 mm / 3D 同步壓紋 / 72 小時防潑水</span></div>
+                    <div class="series-price">
+                        <span class="owner">業主價：$5,200 / 坪</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="series-block">
+                <div class="series-title">
+                    <div class="series-name">精品系列<span class="series-meta">STYLE / 1261 x 192 x 8 mm / 3D 同步壓紋 / 72 小時防潑水</span></div>
+                    <div class="series-price">
+                        <span class="owner">業主價：$5,400 / 坪</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="series-block">
+                <div class="series-title">
+                    <div class="series-name">新寬版系列<span class="series-meta">New Jumbo / 1261 x 244 x 8 mm / 3D 同步壓紋 / 72 小時防潑水</span></div>
+                    <div class="series-price">
+                        <span class="owner">業主價：$5,600 / 坪</span>
+                    </div>
+                </div>
+            </div>
 
             <div class="series-block">
                 <div class="series-title">
@@ -922,48 +1279,48 @@
             <p class="section-summary">德國 EGGER 以嚴謹工藝打造多款木紋色系，Aqua 系列提供防水升級，LARGE / LONG 格式展現大板氣勢，Aqua+ 系列更進一步對應高濕環境需求，是商空與住宅提案都很穩定的系列。</p>
             <div class="insight-grid">
                 <div class="insight-card">
-                    <span class="card-tag">Aqua</span>
+                    <span class="card-tag">AQUA</span>
                     <h3 class="insight-title">標準防水核心</h3>
                     <p class="insight-body">超耐磨防水核心，適合一般居家與商業空間，提供多元色系與穩定施工性。</p>
                 </div>
                 <div class="insight-card">
-                    <span class="card-tag">Large / Long</span>
+                    <span class="card-tag">LARGE / LONG</span>
                     <h3 class="insight-title">大板與長板比例</h3>
                     <p class="insight-body">更寬更長的板材比例，視覺延伸效果更強，適合大坪數空間與開放式格局。</p>
                 </div>
                 <div class="insight-card">
-                    <span class="card-tag">Aqua+</span>
+                    <span class="card-tag">AQUA+</span>
                     <h3 class="insight-title">進階防水定位</h3>
                     <p class="insight-body">加強防水配方，適合浴廁過渡區與較潮濕環境，兼顧功能與質感。</p>
                 </div>
             </div>
             <div class="series-block">
                 <div class="series-title">
-                    <div class="series-name">8/32 - 8/33 入門防水系列</div>
+                    <div class="series-name">NatureSense 純粹系列<span class="series-meta">1292 x 193 x 8 mm</span></div>
                     <div class="series-price">
-                        <span class="owner">參考報價：$5,100</span>
+                        <span class="owner">參考建議售價：$5,100 / 坪</span>
                     </div>
                 </div>
                 <table class="detail-table">
                     <tr><th>型號</th><th>花色</th></tr>
                     <tr><td class="code">EL2154</td><td>洛哈奶油橡木</td></tr>
                     <tr><td class="code">EL2113</td><td>皮諾沙棕橡木</td></tr>
-                    <tr><td class="code">EL2525</td><td>榭菲爾德淺色刺槐</td></tr>
+                    <tr><td class="code">EL2525</td><td>榭菲爾德淺色剌槐</td></tr>
                 </table>
             </div>
 
             <div class="series-block">
                 <div class="series-title">
-                    <div class="series-name">8/32 Aqua 耐磨系列</div>
+                    <div class="series-name">NatureSense Aqua 純粹森潤系列 24H+<span class="series-meta">1292 x 193 x 8 mm</span></div>
                     <div class="series-price">
-                        <span class="owner">參考報價：$5,100</span>
+                        <span class="owner">參考建議售價：$5,100 / 坪</span>
                     </div>
                 </div>
                 <table class="detail-table">
                     <tr><th>型號</th><th>花色</th></tr>
-                    <tr><td class="code">EL2064</td><td>索里雅原橡</td></tr>
+                    <tr><td class="code">EL2064</td><td>索里亞原橡</td></tr>
                     <tr><td class="code">EL2065</td><td>索里亞灰橡</td></tr>
-                    <tr><td class="code">EL2070</td><td>萊里淺胡桃木</td></tr>
+                    <tr><td class="code">EL2070</td><td>蘭里淺胡桃木</td></tr>
                     <tr><td class="code">EL2102</td><td>鄧寧頓淺橡</td></tr>
                     <tr><td class="code">EL2103</td><td>鄧寧頓深橡</td></tr>
                     <tr><td class="code">EL2112</td><td>皮諾淺灰橡木</td></tr>
@@ -973,59 +1330,59 @@
 
             <div class="series-block">
                 <div class="series-title">
-                    <div class="series-name">8/32 Aqua 精選系列</div>
+                    <div class="series-name">NatureSense Aqua 純粹森潤系列 24H+ 精選花色<span class="series-meta">1292 x 193 x 8 mm</span></div>
                     <div class="series-price">
-                        <span class="owner">參考報價：$5,400</span>
+                        <span class="owner">參考建議售價：$5,400 / 坪</span>
                     </div>
                 </div>
                 <table class="detail-table">
                     <tr><th>型號</th><th>花色</th></tr>
                     <tr><td class="code">EL2180</td><td>特雷維索白橡木</td></tr>
-                    <tr><td class="code">EL2240</td><td>維奧淺色梣木</td></tr>
+                    <tr><td class="code">EL2240</td><td>埃維奧淺色橡梣木</td></tr>
                 </table>
             </div>
 
             <div class="series-block">
                 <div class="series-title">
-                    <div class="series-name">8/32 LARGE Aqua 大板系列</div>
+                    <div class="series-name">NatureSense Large Aqua 寬板森潤系列 24H+<span class="series-meta">1292 x 246 x 8 mm</span></div>
                     <div class="series-price">
-                        <span class="owner">參考報價：$5,400</span>
+                        <span class="owner">參考建議售價：$5,400 / 坪</span>
                     </div>
                 </div>
                 <table class="detail-table">
                     <tr><th>型號</th><th>花色</th></tr>
                     <tr><td class="code">EL2026</td><td>維多利亞白色橡木</td></tr>
-                    <tr><td class="code">EL2026</td><td>維多利亞自然橡木</td></tr>
+                    <tr><td class="code">EL2027</td><td>維多利亞自然橡木</td></tr>
                 </table>
             </div>
 
             <div class="series-block">
                 <div class="series-title">
-                    <div class="series-name">10/33 LONG Aqua 長板系列</div>
+                    <div class="series-name">NatureSense Long Aqua 長板森潤系列 24H+<span class="series-meta">2050 x 246 x 10 mm</span></div>
                     <div class="series-price">
-                        <span class="owner">參考報價：$6,700</span>
+                        <span class="owner">參考建議售價：$6,700 / 坪</span>
                     </div>
                 </div>
                 <table class="detail-table">
                     <tr><th>型號</th><th>花色</th></tr>
-                    <tr><td class="code">EL2431</td><td>貝福德淺橡</td></tr>
-                    <tr><td class="code">EL2988</td><td>盧埃納沙米</td></tr>
+                    <tr><td class="code">EL2431</td><td>貝弗德淺橡</td></tr>
+                    <tr><td class="code">EL2988</td><td>盧埃納沙米橡</td></tr>
                 </table>
             </div>
 
             <div class="series-block">
                 <div class="series-title">
-                    <div class="series-name">8/32 - 8/33 Aqua+ 進階防水系列</div>
+                    <div class="series-name">NatureSense Aqua+ 純粹極境系列 72H+<span class="series-meta">1292 x 193 x 8 mm</span></div>
                     <div class="series-price">
-                        <span class="owner">參考報價：$6,100</span>
+                        <span class="owner">參考建議售價：$6,100 / 坪</span>
                     </div>
                 </div>
                 <table class="detail-table">
                     <tr><th>型號</th><th>花色</th></tr>
                     <tr><td class="code">EL2172</td><td>帕多瓦蜂蜜橡木</td></tr>
-                    <tr><td class="code">EL2181</td><td>雷維索自然橡木</td></tr>
-                    <tr><td class="code">EL2192</td><td>圖鈴深橡木</td></tr>
-                    <tr><td class="code">EL2135</td><td>巴羅尼亞灰橡</td></tr>
+                    <tr><td class="code">EL2181</td><td>特雷維索自然橡木</td></tr>
+                    <tr><td class="code">EL2192</td><td>圖靈深橡木</td></tr>
+                    <tr><td class="code">EL2135</td><td>巴羅尼亞灰橡木</td></tr>
                 </table>
             </div>
         </div>
@@ -1035,15 +1392,15 @@
                 <div class="section-index">03</div>
                 <div class="section-copy">
                     <p class="section-kicker">Pattern Flooring & Inorganic Board</p>
-                    <h2 class="section-title">諾達地板與防水超耐磨無機板</h2>
+                    <h2 class="section-title">諾達造型地板與防水超耐磨無機板</h2>
                 </div>
                 <div class="section-region">Noda / MFB</div>
             </div>
-            <p class="section-summary">諾達以多元鋪設工法著稱，典韻系列寬板大氣、人字拼系列視覺層次豐富；MFB 防水超耐磨無機板則結合防水核心技術與耐磨表層，對台灣潮濕氣候與翻修案都相當友善。</p>
+            <p class="section-summary">如果你想做造型拼法、翻修案，或需要比較好掌握預算的防水方案，這一區會比較實用。諾達適合做寬板與人字拼表現，MFB 則是對潮濕氣候與機能需求更友善的選擇；如果你正在比較木地板與無機板差異，下面也整理了無機板的主要特點。</p>
             <div class="section-bullets">
-                <span class="bullet-chip"><span class="bullet-dot"></span>個性化鋪設工法</span>
-                <span class="bullet-chip"><span class="bullet-dot"></span>寬板與人字拼選擇</span>
-                <span class="bullet-chip"><span class="bullet-dot"></span>高 CP 值防水方案</span>
+                <span class="bullet-chip"><span class="bullet-dot"></span>造型鋪法更有記憶點</span>
+                <span class="bullet-chip"><span class="bullet-dot"></span>翻修案常用方案</span>
+                <span class="bullet-chip"><span class="bullet-dot"></span>潮濕氣候友善</span>
             </div>
 
             <div class="series-block">
@@ -1054,7 +1411,7 @@
                     <tr><th>項目</th><th>參考報價</th></tr>
                     <tr>
                         <td>典韻系列 (A1501-A1512)<span class="spec">1515 * 238 * 8MM</span></td>
-                        <td class="owner">$3,900</td>
+                        <td class="owner">$4,000</td>
                     </tr>
                     <tr>
                         <td>人字拼系列 (H201-H206)<span class="spec">593 * 123 * 8MM</span></td>
@@ -1090,67 +1447,107 @@
                         <td class="owner">$800</td>
                     </tr>
                 </table>
+                <div class="insight-grid" style="margin-top:14px;">
+                    <div class="insight-card">
+                        <span class="card-tag">Waterproof Core</span>
+                        <h3 class="insight-title">無機基材防水防潮</h3>
+                        <p class="insight-body">不含木粉，因此不會像一般木質基材那樣吸濕膨脹，對台灣潮濕氣候與翻修案會更友善。</p>
+                    </div>
+                    <div class="insight-card">
+                        <span class="card-tag">Wear Layer</span>
+                        <h3 class="insight-title">高耐磨與抗刮表現</h3>
+                        <p class="insight-body">表面通常採用三氧化二鋁耐磨紙，日常使用更耐磨、抗刮，對高使用頻率空間更有優勢。</p>
+                    </div>
+                    <div class="insight-card">
+                        <span class="card-tag">Structure</span>
+                        <h3 class="insight-title">結合硬度與抗水特性</h3>
+                        <p class="insight-body">結構上同時整合 HDF 超耐磨地板的表面硬度，以及 SPC 防水地板的抗水特性，屬於機能導向方案。</p>
+                    </div>
+                    <div class="insight-card">
+                        <span class="card-tag">Indoor Use</span>
+                        <h3 class="insight-title">低甲醛低膨脹</h3>
+                        <p class="insight-body">採用低甲醛環保材質，並具備較低膨脹特性，對一般居家環境與長時間使用會更安心。</p>
+                    </div>
+                </div>
             </div>
         </div>
 
         <div class="service-panel">
             <div class="service-head">
                 <div>
-                    <p class="board-kicker">Project Support</p>
-                    <h2 class="service-title">服務與施工說明</h2>
-                    <p class="service-subtitle">可依案場需求提供純材料或連工帶料報價，並協助丈量、樣品確認與施工細節溝通，方便正式報價前評估整體預算。</p>
+                    <p class="board-kicker">Homeowner FAQ</p>
+                    <h2 class="service-title">正式報價前，屋主最常問的問題</h2>
+                    <p class="service-subtitle">這些問題先說清楚，設計師與業主在討論預算、材質與施工時間時會更有效率，也比較不容易在後面追加或反覆確認。</p>
                 </div>
             </div>
             <div class="policy-grid">
                 <div class="policy-card">
                     <span class="policy-tag">Quote</span>
-                    <h3 class="policy-title">報價依案場確認</h3>
-                    <p class="policy-body">本頁為系列參考報價，實際金額會依坪數、配件、收邊條件與施工範圍調整。</p>
-                </div>
-                <div class="policy-card">
-                    <span class="policy-tag">Measure</span>
-                    <h3 class="policy-title">支援丈量與估算</h3>
-                    <p class="policy-body">可先依平面圖進行快速估算，正式下單前再以現場丈量確認面積與收邊方式。</p>
-                </div>
-                <div class="policy-card">
-                    <span class="policy-tag">Sample</span>
-                    <h3 class="policy-title">樣品與色號確認</h3>
-                    <p class="policy-body">可依空間採光與家具色調，比對系列樣品、紋理與拼接效果後再定案。</p>
+                    <h3 class="policy-title">為什麼丈量後價格可能會變動？</h3>
+                    <p class="policy-body">本頁先提供系列參考報價，正式金額仍會依坪數、收邊位置、門縫高度、地坪狀況與施工範圍做最後確認。</p>
                 </div>
                 <div class="policy-card">
                     <span class="policy-tag">Accessory</span>
-                    <h3 class="policy-title">配件與施工另計</h3>
-                    <p class="policy-body">靜音墊、收邊條、起步條與特殊施工需求可分項列出，方便對客說明整體預算。</p>
+                    <h3 class="policy-title">哪些費用最容易被忽略？</h3>
+                    <p class="policy-body">靜音墊、踢腳板、起步條、收邊條、拆除清運、地面整平與特殊拼法，通常都需要和地板本體分開確認。</p>
+                </div>
+                <div class="policy-card">
+                    <span class="policy-tag">Family</span>
+                    <h3 class="policy-title">有小孩、寵物或潮濕空間怎麼選？</h3>
+                    <p class="policy-body">若空間使用頻率高，建議先看耐磨與防水等級；若更重視木紋與觸感，再回頭比較表面處理與板材比例。</p>
+                </div>
+                <div class="policy-card">
+                    <span class="policy-tag">Sample</span>
+                    <h3 class="policy-title">只看照片會不會和現場有落差？</h3>
+                    <p class="policy-body">會。不同光源、牆色與家具色都會影響木地板觀感，建議一定要拿樣品到現場比色，判斷會更準。</p>
                 </div>
             </div>
             <div class="cta-grid">
                 <div class="cta-card">
-                    <span class="cta-tag">Measure</span>
-                    <h3 class="cta-title">免費丈量</h3>
-                    <p class="cta-body">提供前期坪數估算與現場丈量服務，協助快速確認預算區間。</p>
+                    <span class="cta-tag">Budget</span>
+                    <h3 class="cta-title">先用平面圖抓預算</h3>
+                    <p class="cta-body">先用平面圖與大致坪數做第一輪估算，能先知道不同系列的預算區間。</p>
                 </div>
                 <div class="cta-card">
-                    <span class="cta-tag">Schedule</span>
-                    <h3 class="cta-title">施工排程規劃</h3>
-                    <p class="cta-body">可依案場時程安排材料進場、施工順序與完工交付時間。</p>
+                    <span class="cta-tag">Measure</span>
+                    <h3 class="cta-title">現場確認收邊與落差</h3>
+                    <p class="cta-body">正式下單前會再確認門縫、踢腳板、收邊方式與原地坪條件，讓報價更接近實際施工。</p>
                 </div>
                 <div class="cta-card">
                     <span class="cta-tag">Sample</span>
-                    <h3 class="cta-title">樣品比對</h3>
-                    <p class="cta-body">提案前可先確認色號與紋理方向，降低完工後與預期落差的風險。</p>
+                    <h3 class="cta-title">樣品到現場比色</h3>
+                    <p class="cta-body">先用樣品對照採光、牆面與家具色，再決定花色，能明顯降低完工後的認知落差。</p>
                 </div>
             </div>
             <div class="service-contact">
-                <span class="contact-pill">可攜平面圖快速估算</span>
-                <span class="contact-pill">歡迎預約現場丈量與正式報價</span>
+                <span class="contact-pill">可先提供平面圖與大致坪數</span>
+                <span class="contact-pill">確認材質後再安排正式丈量與報價</span>
+            </div>
+        </div>
+
+        <div class="card cert-showcase">
+            <div class="section-head">
+                <div class="section-index">04</div>
+                <div class="section-copy">
+                    <p class="section-kicker">Material Certificates</p>
+                    <h2 class="section-title">5分鐘快速認識國際標章</h2>
+                </div>
+                <div class="section-region">Standards</div>
+            </div>
+            <a class="cert-showcase-link" href="https://www.fumaogroup.com.tw/flooringcertificates/" target="_blank" rel="noopener noreferrer" aria-label="前往國際標章說明頁">
+                <img class="cert-showcase-image" src="assets/certificates/international-certifications.jpg" alt="國際標章整理圖">
+            </a>
+            <div class="cert-showcase-actions">
+                <a class="cert-showcase-cta" href="https://www.fumaogroup.com.tw/flooringcertificates/" target="_blank" rel="noopener noreferrer">認識標章</a>
             </div>
         </div>
 
         <div class="footer">
             <span class="footer-title">專業備註</span>
             1. 以上單價均為<span class="highlight">連工帶料</span>，且<span class="highlight">不含 5% 營業稅</span>。<br>
-            2. 以上為系列參考報價，實際金額需依案場條件、配件與施工範圍另行確認。<br>
-            3. 更新日期：2026/03/27。
+            2. 以上為系列參考報價，實際金額仍需依坪數、地坪條件、配件、拆除與施工範圍另行確認。<br>
+            3. 建議正式下單前先完成現場丈量、樣品比對與收邊方式確認。<br>
+            4. 更新日期：2026/03/30。
         </div>
     </div>
 </body>
