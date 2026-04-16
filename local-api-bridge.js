@@ -3,6 +3,7 @@
   if (!LOCAL_HOSTS.has(window.location.hostname)) return;
 
   const mode = String(document.body.dataset.pageMode || "owner").toLowerCase() === "designer" ? "designer" : "owner";
+  const showPricing = mode === "designer";
   const apiUrl = `http://127.0.0.1:4010/api/v1/catalog?mode=${mode}`;
 
   const BALTERIO_IDS = [
@@ -134,7 +135,7 @@
   }
 
   function setRowPrice(row, owner, designer) {
-    if (!row) return;
+    if (!showPricing || !row) return;
     const cells = row.querySelectorAll("td");
     if (cells.length < 2) return;
     setCellPrice(cells[1], owner);
@@ -144,7 +145,7 @@
   }
 
   function setPriceSpans(box, owner, designer) {
-    if (!box) return;
+    if (!showPricing || !box) return;
     const ownerNode = box.querySelector(".owner");
     const designerNode = box.querySelector(".designer");
 
